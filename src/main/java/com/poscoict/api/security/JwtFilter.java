@@ -7,6 +7,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.poscoict.api.entity.UserEntity;
+import com.poscoict.api.service.FilterService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
@@ -14,6 +16,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -23,7 +26,11 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class JwtFilter extends OncePerRequestFilter{
     
     @Autowired
-    TokenProvider tokenProvider;
+    private TokenProvider tokenProvider;
+    
+    @Autowired
+    private FilterService filterService;
+
     //#region
     // @Override
     // public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -77,7 +84,10 @@ public class JwtFilter extends OncePerRequestFilter{
                 if(validated){
                     String user_sn = tokenProvider.GetTokenBody(access_token);
 
-                    AbstractAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user_sn, null,AuthorityUtils.NO_AUTHORITIES);
+
+                    UserEntity user=(UserEntity)filterService.loadUserByUsername(user_sn);
+
+                    AbstractAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(user, null,user.getAuthorities());
 
                     authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                     
@@ -90,6 +100,7 @@ public class JwtFilter extends OncePerRequestFilter{
                     // 3. SecurityContextHolder에 SecurityContext 저장 
                     // @AuthenticationPrincipal로 토큰에 저장한값 가져올 수 있게함
                     // filter를 통가 할 수 있게 권한 인증
+
                     SecurityContextHolder.setContext(securityContext);
                 }
 

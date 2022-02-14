@@ -32,9 +32,9 @@ public class UserController {
     }
 
     @PostMapping("/tokenlogin")
-    public ResponseDTO<?> UserTokenLoginController(@AuthenticationPrincipal String mem_sn,@RequestBody UserLoginDTO dto){
+    public ResponseDTO<?> UserTokenLoginController(@AuthenticationPrincipal UserEntity user,@RequestBody UserLoginDTO dto){
         try {
-           System.out.println("TokenLOGIN : "+mem_sn);
+           System.out.println("TokenLOGIN : "+user.getMem_name());
            
             UserEntity result = uservice.tokenLogin(dto);   
             return ResponseDTO.<UserEntity>builder().data(result).build();

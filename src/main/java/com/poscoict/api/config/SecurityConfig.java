@@ -30,12 +30,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().disable()
                 .authorizeRequests() // 다음 리퀘스트에 대한 사용권한 체크
                 	.antMatchers("/user/login").permitAll() // 누구나 로그인 가능
-                .anyRequest().authenticated();
+                .anyRequest().hasRole("USER");
          
 
 
         http.addFilterBefore(jwtFilter, CorsFilter.class);
     }
+
 
     
 }

@@ -3,7 +3,6 @@ package com.poscoict.api.service;
 
 import com.poscoict.api.entity.UserEntity;
 import com.poscoict.api.repository.UserRepository;
-import com.poscoict.api.security.PrincipalDetails;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,11 +22,8 @@ public class FilterService implements UserDetailsService{
             if(mem_sn != null){
 
                 UserEntity user=userRepository.UserTokenLogin(Integer.parseInt(mem_sn));
-                
-                PrincipalDetails user_details 
-                    =  PrincipalDetails.builder().user(user).build();
 
-                return user_details;
+                return user;
             }
         }catch(RuntimeException e){
             return null;
