@@ -1,0 +1,75 @@
+[INFO ] 10:03:18.970 com.poscoict.api.ApiApplication - Starting ApiApplication using Java 11.0.13 on DESKTOP-MH54HI0 with PID 11960 (C:\Users\User\Desktop\api\bin\main started by User in C:\Users\User\Desktop\api)
+[INFO ] 10:03:18.973 com.poscoict.api.ApiApplication - No active profile set, falling back to default profiles: default
+[INFO ] 10:03:19.066 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO ] 10:03:19.067 o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO ] 10:03:20.495 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 10:03:20.676 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 145 ms. Found 1 JPA repository interfaces.
+[INFO ] 10:03:22.611 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+[INFO ] 10:03:22.636 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+[INFO ] 10:03:22.638 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 10:03:22.639 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[INFO ] 10:03:22.808 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 10:03:22.809 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3740 ms
+[INFO ] 10:03:23.531 org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.4.Final
+[INFO ] 10:03:23.857 o.h.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+[INFO ] 10:03:24.192 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+[INFO ] 10:03:24.690 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+[INFO ] 10:03:24.748 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO ] 10:03:26.096 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 10:03:26.119 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 10:03:26.267 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 10:03:27.095 o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 4c29548f-2d15-4b9b-8d86-1e7e8b868935
+
+[INFO ] 10:03:27.660 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65abb313, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dde21da, org.springframework.security.web.header.HeaderWriterFilter@636bcaf8, com.poscoict.api.security.JwtFilter@dd583ff, org.springframework.web.filter.CorsFilter@524e444, org.springframework.security.web.authentication.logout.LogoutFilter@530b0c4e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e5c0950, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@33221132, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d9a922a, org.springframework.security.web.session.SessionManagementFilter@98bf3d3, org.springframework.security.web.access.ExceptionTranslationFilter@1036843, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@447a82bf]
+[INFO ] 10:03:28.208 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 10:03:28.240 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+[INFO ] 10:03:28.285 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+[INFO ] 10:03:28.486 com.poscoict.api.ApiApplication - Started ApiApplication in 10.424 seconds (JVM running for 11.253)
+[INFO ] 10:04:09.131 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 10:04:09.133 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 10:04:09.142 o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+[INFO ] 10:04:09.473 c.p.api.security.TokenProvider - Tue Feb 15 10:04:09 KST 2022
+[INFO ] 10:04:09.520 c.p.api.security.TokenProvider - Tue Feb 15 10:04:09 KST 2022
+[INFO ] 10:04:15.583 c.p.api.security.TokenProvider - validate !!!eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzMiLCJpc3MiOiJLd29uIiwiaWF0IjoxNjQ0NzY0MDEzLCJleHAiOjE2NDQ4NTA0MTN9.uhrurRpSThElesorNVFW2vsm65EeQCH3HMi6sFll8sAmRYfg0cJ87NTJLbsoapJ6y557umpGi28eebIz5u12zQ
+[INFO ] 10:04:15.612 c.p.api.security.TokenProvider - CLAIMS : header={alg=HS512},body={sub=133, iss=Kwon, iat=1644764013, exp=1644850413},signature=uhrurRpSThElesorNVFW2vsm65EeQCH3HMi6sFll8sAmRYfg0cJ87NTJLbsoapJ6y557umpGi28eebIz5u12zQ
+[INFO ] 10:05:47.301 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 10:05:47.391 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+[INFO ] 10:05:47.414 com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+[INFO ] 10:05:47.580 com.poscoict.api.ApiApplication - Starting ApiApplication using Java 11.0.13 on DESKTOP-MH54HI0 with PID 11960 (C:\Users\User\Desktop\api\bin\main started by User in C:\Users\User\Desktop\api)
+[INFO ] 10:05:47.584 com.poscoict.api.ApiApplication - No active profile set, falling back to default profiles: default
+[INFO ] 10:05:48.071 o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO ] 10:05:48.102 o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 29 ms. Found 1 JPA repository interfaces.
+[INFO ] 10:05:48.374 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 80 (http)
+[INFO ] 10:05:48.376 o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+[INFO ] 10:05:48.377 o.a.catalina.core.StandardService - Starting service [Tomcat]
+[INFO ] 10:05:48.378 o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.56]
+[INFO ] 10:05:48.417 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+[INFO ] 10:05:48.417 o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 820 ms
+[INFO ] 10:05:48.724 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Starting...
+[INFO ] 10:05:48.752 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Start completed.
+[INFO ] 10:05:48.756 org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+[INFO ] 10:05:48.984 o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[INFO ] 10:05:48.988 o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[WARN ] 10:05:49.125 o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO ] 10:05:49.502 o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0b767a42-ca40-425a-98ee-589e23fc5d09
+
+[INFO ] 10:05:49.723 o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@44450008, org.springframework.security.web.context.SecurityContextPersistenceFilter@288e22d, org.springframework.security.web.header.HeaderWriterFilter@5331ae96, com.poscoict.api.security.JwtFilter@27b995bd, org.springframework.web.filter.CorsFilter@d1dd40f, org.springframework.security.web.authentication.logout.LogoutFilter@2ca5b0c9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@42339e19, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1c28ddd7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@45fdec87, org.springframework.security.web.session.SessionManagementFilter@66427cd7, org.springframework.security.web.access.ExceptionTranslationFilter@40c01762, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6faea4ad]
+[INFO ] 10:05:49.955 o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+[INFO ] 10:05:49.969 o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+[INFO ] 10:05:49.973 o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 80 (http) with context path ''
+[INFO ] 10:05:50.162 com.poscoict.api.ApiApplication - Started ApiApplication in 2.665 seconds (JVM running for 152.927)
+[INFO ] 10:05:50.166 o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+[INFO ] 10:06:02.581 o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO ] 10:06:02.582 o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+[INFO ] 10:06:02.585 o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+[INFO ] 10:06:02.588 c.p.api.security.TokenProvider - validate !!!eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzMiLCJpc3MiOiJLd29uIiwiaWF0IjoxNjQ0NzY0MDEzLCJleHAiOjE2NDQ4NTA0MTN9.uhrurRpSThElesorNVFW2vsm65EeQCH3HMi6sFll8sAmRYfg0cJ87NTJLbsoapJ6y557umpGi28eebIz5u12zQ
+[INFO ] 10:06:02.592 c.p.api.security.TokenProvider - CLAIMS : header={alg=HS512},body={sub=133, iss=Kwon, iat=1644764013, exp=1644850413},signature=uhrurRpSThElesorNVFW2vsm65EeQCH3HMi6sFll8sAmRYfg0cJ87NTJLbsoapJ6y557umpGi28eebIz5u12zQ
+[INFO ] 10:06:06.773 c.p.api.security.TokenProvider - Tue Feb 15 10:06:06 KST 2022
+[INFO ] 10:06:06.775 c.p.api.security.TokenProvider - Tue Feb 15 10:06:06 KST 2022
+[INFO ] 10:08:44.720 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 10:08:44.723 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO ] 10:08:44.742 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
