@@ -14,6 +14,6 @@ public interface UserRepository extends JpaRepository<UserEntity,Integer> {
     @Query(value="select * from MEM_TB where mem_id=?1 and mem_pw=?2",nativeQuery = true)
     public UserEntity UserLogin(String mem_id,String mem_pw);
 
-    @Query(value = "select * from MEM_TB where mem_sn=?1",nativeQuery = true)
+    @Query(value = "select * from mem_tb join authorities on  mem_sn = MEM_TB_SN where mem_sn= ?1",nativeQuery = true)
     public UserEntity UserTokenLogin(Integer mem_sn);
 }

@@ -28,12 +28,15 @@ public class TokenProvider {
     public static final String SECRET_KEY="NMA8JPctFuna59f5GQW15G3HDSDWFV3GEWQENMA8JPctFuna59f5GQW15G3HDSDWFV3GEWQE";
 
     public String create(UserEntity userEntity){
-        Date expiryDate = Date.from(Instant.now().plus(1,ChronoUnit.DAYS));
+        Date expiryDate = Date.from(Instant.now().plus(7,ChronoUnit.DAYS));
         log.info(expiryDate.toString());
 
         Key key = Keys.hmacShaKeyFor(SECRET_KEY.getBytes(StandardCharsets.UTF_8));
         
-        return Jwts.builder().signWith(key,SignatureAlgorithm.HS512).setSubject(userEntity.getMem_sn().toString()).setIssuer("Kwon").setIssuedAt(new Date()).setExpiration(expiryDate).compact();
+        return Jwts.builder().signWith(key,SignatureAlgorithm.HS512)
+                    .setSubject(userEntity.getMem_sn().toString())
+                    .setIssuer("Kwon").setIssuedAt(new Date())
+                    .setExpiration(expiryDate).compact();
     }
 
     public boolean validate(String token){

@@ -33,16 +33,16 @@ public class UserController {
 
     @PostMapping("/tokenlogin")
     public ResponseDTO<?> UserTokenLoginController(@AuthenticationPrincipal UserEntity user,@RequestBody UserLoginDTO dto){
-        try {
-           System.out.println("TokenLOGIN : "+user.getMem_name());
+        // try {
+        //    System.out.println("TokenLOGIN : "+user.getMem_name());
            
-            UserEntity result = uservice.tokenLogin(dto);   
-            return ResponseDTO.<UserEntity>builder().data(result).build();
+        //     UserEntity result = uservice.tokenLogin(dto);   
+        //     return ResponseDTO.<UserEntity>builder().data(result).build();
             
-        } catch (Exception e) {
-            return ResponseDTO.<String>builder().error(e.getMessage()).build();
-        }
-
+        // } catch (Exception e) {
+        //     return ResponseDTO.<String>builder().error(e.getMessage()).build();
+        // }
+        return ResponseDTO.<UserEntity>builder().data(user).build();
     }
 
     @PostMapping("/tokenlogout")

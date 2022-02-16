@@ -6,11 +6,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -37,6 +37,7 @@ public class UserEntity implements UserDetails {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="MEM_SN")
     private Integer mem_sn;
 
     @Column(name ="MEM_ID")
@@ -57,17 +58,17 @@ public class UserEntity implements UserDetails {
     @Column(name = "MEM_ROLE")
     private String mem_role;
 
-    @OneToMany
-    @JoinTable(name = "authrities",
-                joinColumns = @JoinColumn(name="mem_tb_sn"),
-                inverseJoinColumns = @JoinColumn(name="mem_sn"))
-    private List<AuthorityEntity> authorities;
-
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name="MEM_TB_SN")
+    public List<AuthorityEntity> authList=new ArrayList<>();
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         ArrayList<GrantedAuthority> auth = new ArrayList<GrantedAuthority>();
-        auth.add(new SimpleGrantedAuthority("ROLE_"+mem_role));
+        for (AuthorityEntity authorityEntity : this.authList) {    
+            auth.add(new SimpleGrantedAuthority("ROLE_"+authorityEntity.getAuthority()));
+        }
+        // auth.add(new SimpleGrantedAuthority("ROLE_"+this.mem_role));
         return auth;
     }
 
@@ -100,7 +101,5 @@ public class UserEntity implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
-
 
 }
