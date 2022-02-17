@@ -23,7 +23,7 @@ public class UserService {
 
 
         UserEntity entity = dto.getUserEntity();
-        System.out.println(entity.toString());
+        
         UserEntity res_entity=uRepository.UserLogin(entity.getMem_id(), entity.getMem_pw());
 
         token.create(res_entity);

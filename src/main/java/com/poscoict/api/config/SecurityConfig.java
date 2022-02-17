@@ -27,8 +27,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.securityContext().and() //보안 컨택스트 연계
                 .exceptionHandling().and()     //에러 핸들링
-        // .formLogin().loginPage("/login.jsp").defaultSuccessUrl("/main").failureUrl("login.jsp?error=true") //로그인 페이지
-        // .servletApi().and()  //View 를 함깨구현시
+            // .formLogin().loginPage("/login.jsp").defaultSuccessUrl("/main").failureUrl("login.jsp?error=true") //로그인 페이지
+            // .servletApi().and()  //View 를 함깨구현시
                 // .authorizeRequests(authorize -> authorize
                 //  .antMatchers("/css/**","/js/**").permitAll())  
                 .cors().and() //cors 옵션 체크  //Cross-Origin Resource Sharing
@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin().disable()
                 .authorizeRequests() // 다음 리퀘스트에 대한 사용권한 체크
                 .antMatchers("/user/login").permitAll() // 누구나 로그인 가능
-                .anyRequest().hasRole("WORKER");
+                .anyRequest().hasRole("USER");
          
 
 

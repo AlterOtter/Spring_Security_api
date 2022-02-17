@@ -42,6 +42,7 @@ public class UserController {
         // } catch (Exception e) {
         //     return ResponseDTO.<String>builder().error(e.getMessage()).build();
         // }
+        
         return ResponseDTO.<UserEntity>builder().data(user).build();
     }
 

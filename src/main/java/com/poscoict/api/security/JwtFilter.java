@@ -30,6 +30,7 @@ public class JwtFilter extends OncePerRequestFilter{
     @Autowired
     private FilterService filterService;
 
+
     //#region
     // @Override
     // public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -71,7 +72,10 @@ public class JwtFilter extends OncePerRequestFilter{
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
-            
+          
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            System.out.println(request.getHeader("user-agent"));
+            System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
             String authorization=request.getHeader("Authorization");
             String access_token = replaceTokenBearer(authorization);
             System.out.println(access_token);

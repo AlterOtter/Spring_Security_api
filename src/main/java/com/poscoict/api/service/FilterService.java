@@ -1,6 +1,7 @@
 package com.poscoict.api.service;
 
 
+import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 
 import com.poscoict.api.entity.UserEntity;
@@ -21,6 +22,9 @@ public class FilterService implements UserDetailsService{
     @Autowired 
     private UserRepository userRepository;
 
+    @Autowired
+    private EntityManager entityManager;
+
     @Transactional
     @Override
     public UserDetails loadUserByUsername(String mem_sn) throws UsernameNotFoundException {
@@ -28,7 +32,7 @@ public class FilterService implements UserDetailsService{
             if(mem_sn != null){
 
                 UserEntity user=userRepository.UserTokenLogin(Integer.parseInt(mem_sn));
-                // log.info(String.valueOf(user.authList.size()));
+                entityManager.detach(user);
                 return user;
             }
         }catch(RuntimeException e){
