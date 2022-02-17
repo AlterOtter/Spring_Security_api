@@ -17,6 +17,7 @@ public class UserLoginDTO {
     String mem_id;
     String mem_pw;
     String access_token;
+    
     public UserEntity getUserEntity(){
         return UserEntity.builder().mem_id(this.mem_id).mem_pw(this.mem_pw).build();
     }
