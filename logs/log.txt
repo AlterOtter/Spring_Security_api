@@ -1,3 +1,4 @@
-[INFO ] 21:55:24.274 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-[INFO ] 21:55:24.275 com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Shutdown initiated...
-[INFO ] 21:55:24.289 com.zaxxer.hikari.HikariDataSource - HikariPool-18 - Shutdown completed.
+[WARN ] 08:48:06.739 com.zaxxer.hikari.pool.HikariPool - HikariPool-2 - Thread starvation or clock leap detected (housekeeper delta=11h44m29s893ms573?s300ns).
+[INFO ] 08:48:52.912 o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO ] 08:48:52.915 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+[INFO ] 08:48:52.931 com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
