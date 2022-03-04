@@ -50,6 +50,7 @@ FetchType
 3. 서비스가 수평적으로 확장되는 Auto Scaling이 될 때마다 서비스의 설정을 직접 변경해 줘야 합니다.
 4. Spring Cloud Config는 분산되어 있는 여러 서비스의 설정을 관리할 수 있는 서버와 클라이언트를 제공합니다.
 
+
     MircoService -----------|
                             |
                             |                                               |---> git
@@ -59,19 +60,20 @@ FetchType
     MircoService -----------|  <각 MicroService가 가지는 Config 들을 가지고 있다.>
 
 
+
 #Spring Cloud Config 이해 [2/2]
 
 1. 마이크로서비스가 시작할 때 Spring Cloud Config에서 관리하는 설정 정보를 요청합니다.
 2. 마이크로서비스는 다양한 환경에서 실행될 수 있으므로 Spring Cloud Config 서버는 환경별로 설정을 분리할 수 있습니다.
 3. 환경에 따른 설정 정보는 profile과 label로 구분할 수 있습니다.
 
-    MircoService A1-----------|
-                              |
-                              |                                               |---> git
-    MircoService A2-----------O -------------> Spring Cloud Config -------->  |
-                              |                                               |---> file
-                              |           
-    MircoService A3-----------|        
+        MircoService A1-----------|
+                                |
+                                |                                               |---> git
+        MircoService A2-----------O -------------> Spring Cloud Config -------->  |
+                                |                                               |---> file
+                                |           
+        MircoService A3-----------|        
 
 
 4. http://localhost:9900/configtest/dev 실행시 
@@ -119,11 +121,11 @@ Spring Discovery[2/2]
 4. Eureka는 마이크로서비스를 이름과 인스턴스의 위치(IP,Port)의 쌍으로 관리합니다.
 
 
-                                      (Eureka Server)
-                        ----------------|Discovery|<---------------------
-                        |                                               |
-           2.register   |  4.find                                       | 1.register
-                        |                                               |
-                        |               5.request(REST)                 |
-request (Rest) ===> Server <---------------------------------------> Client
-                                        6.response(JSON)                        
+                                            (Eureka Server)
+                                ----------------|Discovery|<---------------------
+                                |                                               |
+                   2.register   |  4.find                                       | 1.register
+                                |                                               |
+                                |               5.request(REST)                 |
+        request (Rest) ===> Server <---------------------------------------> Client
+                                                6.response(JSON)                        
