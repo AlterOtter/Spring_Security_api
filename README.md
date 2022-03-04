@@ -51,13 +51,13 @@ FetchType
 4. Spring Cloud Config는 분산되어 있는 여러 서비스의 설정을 관리할 수 있는 서버와 클라이언트를 제공합니다.
 
 
-    MircoService -----------|
-                            |
-                            |                                               |---> git
-    MircoService -----------|-------------> Spring Cloud Config -------->   | 
-                            |                                               |---> file
-                            |           <Spring Cloud Server가 존재>
-    MircoService -----------|  <각 MicroService가 가지는 Config 들을 가지고 있다.>
+        MircoService -----------|
+                                |
+                                |                                               |---> git
+        MircoService -----------|-------------> Spring Cloud Config -------->   | 
+                                |                                               |---> file
+                                |           <Spring Cloud Server가 존재>
+        MircoService -----------|  <각 MicroService가 가지는 Config 들을 가지고 있다.>
 
 
 
@@ -68,11 +68,11 @@ FetchType
 3. 환경에 따른 설정 정보는 profile과 label로 구분할 수 있습니다.
 
         MircoService A1-----------|
-                                |
-                                |                                               |---> git
+                                  |
+                                  |                                               |---> git
         MircoService A2-----------O -------------> Spring Cloud Config -------->  |
-                                |                                               |---> file
-                                |           
+                                  |                                               |---> file
+                                  |            
         MircoService A3-----------|        
 
 
